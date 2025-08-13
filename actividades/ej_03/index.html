@@ -1,24 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad #</title>
+    <title>Control de LEDs y RGB</title>
+    
     <link rel="stylesheet" href="styles/base.css">
 </head>
+    
 <body>
     <header>
-        <h1>Actividad #</h1>
+        <h1>Control de LEDs</h1>
     </header>
+
     <main>
-    </main>
-    <footer>
-        <p>Representación Frontal y Visual de Datos</p>
-        <p>Computadoras de Aeronaves</p>
-        <p>Alumno XX</p>
-        <p>Prof. Carlassara Fabrizio</p>
-        <p id="fecha"></p>
-    </footer>
-    <script src="scripts/base.js"></script>
-</body>
-</html>
+        <section class="led-controls">
+            <h2>Control de LEDs</h2>
+            <div class="button-container">
+                <button class="led-button" data-led-id="1">LED1</button>
+                <button class="led-button" data-led-id="2">LED2</button>
+                <button class="led-button" data-led-id="3">LED3</button>
+            </div>
+        </section>
+         <hr> <div class="color-sliders">
+        <h2>Control de Colores RGB</h2>
+
+        <div class="slider-group">
+            <label for="redSlider">Rojo:</label>
+            <input type="range" id="redSlider" min="0" max="255" value="0">
+        </div>
+
+        <div class="slider-group">
+            <label for="greenSlider">Verde:</label>
+            <input type="range" id="greenSlider" min="0" max="255" value="0">
+        </div>
+
+        <div class="slider-group">
+            <label for="blueSlider">Azul:</label>
+            <input type="range" id="blueSlider" min="0" max="255" value="0">
+        </div>
+
+        <button id="applyColorButton">Aplicar</button>
+
+        <div id="colorPreview"></div>
+        
+         <section id="TEMPERATURA" class="temperatura-control-section">
+            <h2>Control de Temperatura</h2>
+            <div class="setpoint-group">
+                <label for="setpointRange">Setpoint: <span id="setpointValue">20</span> °C</label>
+                <input type="range" id="setpointRange" min="0" max="30" value="20">
+            </div>
+            <div class="sensor-group">
+                <label>Temperatura actual: <span id="sensorTemp">--</span> °C</label>
+            </div>
+            <div class="buzzer-group">
+                <label>Estado del buzzer: <span id="buzzerStatus">--</span></label>
+            </div>
+        </section>
+    </div>
+    
+<script src="scripts/script.js"></script>
+<script src="scripts/base.js"></script>
